@@ -5,14 +5,13 @@ Code for st-ReID(pytorch). We achieve **Rank@1=98.1%, mAP=87.6%** without re-ran
 
 ## 1. ST-ReID
 ### 1.1 model
-![](https://i.imgur.com/WYCcBHO.jpg)
+ <div align="center"> ![](https://i.imgur.com/WYCcBHO.jpg)</div>
 
 ### 1.2 result
-![](https://i.imgur.com/KubElWp.jpg)
-
+ <div align="center"> ![](https://i.imgur.com/KubElWp.jpg)</div>
 ----------
 
-![](https://i.imgur.com/Ul6h45K.jpg)
+ <div align="center"> ![](https://i.imgur.com/Ul6h45K.jpg)</div>
 
 
 ## 2. rerequisites
