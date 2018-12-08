@@ -64,10 +64,6 @@ python3 evaluate_st.py --name ft_ResNet50_pcb_duke_e
 1) python3 gen_rerank_all_scores_mat.py --name ft_ResNet50_pcb_duke_e <br>
 2) python3 evaluate_rerank_duke.py --name ft_ResNet50_pcb_duke_e
 
-## Related Repos
-
-Our codes are mainly based on this [repository](https://github.com/layumi/Person_reID_baseline_pytorch) 
-
 ## Citation
 
 If you use this code, please kindly cite it in your paper.
@@ -81,3 +77,6 @@ If you use this code, please kindly cite it in your paper.
 }
 ```
 
+## Related Repos
+
+Our codes are mainly based on this [repository](https://github.com/layumi/Person_reID_baseline_pytorch) 
