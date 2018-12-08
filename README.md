@@ -3,7 +3,7 @@
 ----------
 Code for st-ReID(pytorch). We arrive **Rank@1=98.1%, mAP=87.6%** without re-rank and **Rank@1=98.0%, mAP=95.5%** with re-rank for market1501.For Duke-MTMC, we arrive **Rank@1=94.4%, mAP=83.9%** without re-rank and **Rank@1=94.5%, mAP=92.7%** with re-rank.
 
-## 一、ST-ReID
+## 1. ST-ReID
 ### 1.1 model
 ![](https://i.imgur.com/WYCcBHO.jpg)
 
@@ -15,13 +15,13 @@ Code for st-ReID(pytorch). We arrive **Rank@1=98.1%, mAP=87.6%** without re-rank
 ![](https://i.imgur.com/Ul6h45K.jpg)
 
 
-## 二、Prerequisites
+## 2. rerequisites
 - **Pytorch 0.3**
 - Python 3.6
 - Numpy
 
 
-## 三、experiment
+## 3. experiment
 ### Market1501
 1. data prepare<br>
    1) change the path of dataset <br>
