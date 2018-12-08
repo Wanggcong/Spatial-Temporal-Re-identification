@@ -63,3 +63,21 @@ python3 evaluate_st.py --name ft_ResNet50_pcb_duke_e
 6. re-rank<br>
 1) python3 gen_rerank_all_scores_mat.py --name ft_ResNet50_pcb_duke_e <br>
 2) python3 evaluate_rerank_duke.py --name ft_ResNet50_pcb_duke_e
+
+## Related Repos
+
+Our codes are mainly based on this [repository](https://github.com/layumi/Person_reID_baseline_pytorch) 
+
+## Citation
+
+If you use this code, please kindly cite it in your paper.
+
+```latex
+@article{guangcong2019aaai,
+  title={Spatial-Temporal Person Re-identification},
+  author={Wang, Guangcong and Lai, Jianhuang and Huang, Peigen and Xie, Xiaohua},
+  booktitle={AAAI},
+  year={2019}
+}
+```
+
