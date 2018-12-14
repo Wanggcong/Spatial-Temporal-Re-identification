@@ -38,79 +38,15 @@ def evaluate(qf,ql,qc,qfr,gf,gl,gc,gfr,distribution):
             pr = distribution[gc[i]-1][qc-1][hist_]
         score_st[i] = pr
 
-    # score_all = score + 0.01*score_st  # 63.9
-    # score_all = score* (score_st>0.1)   # 22% top1
-    # score_all = score* (score_st>0.01)   # 79% top1
-    # score_all = score* (score_st>0.001)   # 80.2%
-    # score_all = score* np.exp(score_st>0.001)   # 80.2%
-    # d0=0.01
-    # d1=1
-    # n=2
-    # score_all = score* (1-np.exp(-(score_st/d0)**(2*n)))
-    # score_all = (1-np.exp(-(score/d1)**(2*n)))* (1-np.exp(-(score_st/d0)**(2*n)))
-    # score_all =score* (score)* (1-np.exp(-(score_st/d0)**(2*n)))
-    # score_all = np.exp(score)* (1-np.exp(-(score_st/d0)**(2*n)))
-
-    # score_all = score* score_st   # 
-
-
-    # predict index
-    # index = np.argsort(score)  #from small to large
-    # score_raw = score_all
-
-    # score = 1/(1+np.exp(-score))*(score_st>0.001)   #813
-    # score = score*((score_st>0.001)+0.5)
-    # score = score*((score_st>0.001)+5)
-
-    # score = score*((score_st>0.001)+5)
-    ###############################################################################################
-    # score = 1/(1+np.exp(-5*score))*1/(1+2*np.exp(-5*score_st))
-    # score = score_st
-
-    # score = score*(score_st>0.01)
-    # score = score*((score_st>0.001))
-    # score = score*((score_st>0.001))
-
-    # score = score*score_st
-    # score  = score+alpha*score_st
-    # score  = 1/(1+np.exp(-5*score))+alpha*1/(1+2*np.exp(-5*score_st)) # not good
-
     # ========================
     score  = 1/(1+np.exp(-alpha*score))*1/(1+2*np.exp(-alpha*score_st))
-    ###############################################################################################
-
     index = np.argsort(-score)  #from large to small
-    # print('np.sort(-score):',np.sort(-score))
-    # print('index length:',len(index))
-    # index = index[::-1]
-    # index_temp = index[:50]
-
-    
-    # if False:
-    # if True:
-    #     ind = index[:250]
-    #     sc = score[ind]
-    #     sc_st = score_st[ind]
-    #     # print('sc_st:',np.sort(-sc_st))
-    #     sc_all = sc* ((sc_st>0.001)+0.5)
-    #     index_new = np.argsort(-sc_all)
-    #     index_temp = np.zeros(len(index))
-    #     index_temp[...] = index
-    #     for i in range(len(ind)):
-    #         index[i]=index_temp[index_new[i]]
-    
-
-    # print('index len:',len(index))
-    #index = index[0:2000]
-    # good index
     query_index = np.argwhere(gl==ql)
     camera_index = np.argwhere(gc==qc)
-
     good_index = np.setdiff1d(query_index, camera_index, assume_unique=True)
     junk_index1 = np.argwhere(gl==-1)
     junk_index2 = np.intersect1d(query_index, camera_index)
     junk_index = np.append(junk_index2, junk_index1) #.flatten())
-    
     CMC_tmp = compute_mAP(index, good_index, junk_index)
     return CMC_tmp
 
@@ -248,7 +184,6 @@ for i in range(8):
         distribution[i][j][:]=distribution[i][j][:]/(sum_[i][j]+eps)        
 #############################################################
 
-
 CMC = torch.IntTensor(len(gallery_label)).zero_()
 ap = 0.0
 #print(query_label)
@@ -269,13 +204,6 @@ print('alpha,smooth:',alpha,smooth)
 
 result = {'CMC':CMC.numpy()}
 
-###############################################################################################
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_two_stream.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_vis_stream.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_st_stream.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_rand.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_two_stream_cnpr.mat',result)
 scipy.io.savemat('model/'+name+'/'+'CMC_duke_two_stream_add'+str(alpha)+'.mat',result)
 
-###############################################################################################
 
