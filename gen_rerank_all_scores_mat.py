@@ -75,20 +75,6 @@ def evaluate2(qf,ql,qc,qfr,gf,gl,gc,gfr,distribution):
         score_st[i] = pr
     # ========================
     score  = 1/(1+np.exp(-alpha*score))*1/(1+2*np.exp(-alpha*score_st))
-    # print('score shape:',score.shape)
-    # ###############################################################################################
-
-    # index = np.argsort(-score)  #from large to small
-
-    # query_index = np.argwhere(gl==ql)
-    # camera_index = np.argwhere(gc==qc)
-
-    # good_index = np.setdiff1d(query_index, camera_index, assume_unique=True)
-    # junk_index1 = np.argwhere(gl==-1)
-    # junk_index2 = np.intersect1d(query_index, camera_index)
-    # junk_index = np.append(junk_index2, junk_index1) #.flatten())
-    
-    # ap, cmc = compute_mAP(index, good_index, junk_index)
     return score
 
 def compute_mAP(index, good_index, junk_index):
@@ -148,10 +134,7 @@ def gauss_smooth(arr):
             matrix[i][j]=gaussian_vect[j-i]    
     matrix = matrix+matrix.transpose()
     for i in range(hist_num):
-        matrix[i][i]=matrix[i][i]/2
-    # for i in range(hist_num):
-    #     for j in range(i):
-    #         matrix[i][j]=gaussian_vect[j]     
+        matrix[i][i]=matrix[i][i]/2    
     xxx = np.dot(matrix,arr)
     return xxx
 
@@ -161,8 +144,6 @@ def gauss_smooth2(arr,o):
     vect= np.zeros((hist_num,1))
     for i in range(hist_num):
         vect[i,0]=i
-    # gaussian_vect= gaussian_func2(vect,0,1)
-    # o=50
     approximate_delta = 3*o     #  when x-u>approximate_delta, e.g., 6*o, the gaussian value is approximately equal to 0.
     gaussian_vect= gaussian_func2(vect,0,o)
     matrix = np.zeros((hist_num,hist_num))
@@ -175,15 +156,11 @@ def gauss_smooth2(arr,o):
             k=k+1  
     matrix = matrix+matrix.transpose()
     for i in range(hist_num):
-        matrix[i][i]=matrix[i][i]/2
-    # for i in range(hist_num):
-    #     for j in range(i):
-    #         matrix[i][j]=gaussian_vect[j]     
+        matrix[i][i]=matrix[i][i]/2   
     xxx = np.dot(matrix,arr)
     return xxx
 
 ######################################################################
-# result = scipy.io.loadmat('pytorch_result.mat')
 result = scipy.io.loadmat('model/'+name+'/'+'pytorch_result.mat')
 query_feature = result['query_f']
 query_cam = result['query_cam'][0]
@@ -252,8 +229,6 @@ for i in range(len(all_labels)):
     # CMC = CMC + CMC_tmp
     # ap += ap_tmp
     print(i)
-    # if i%10==0:
-    #     print('i:',i)
 
 # CMC = CMC.float()
 # CMC = CMC/len(query_label) #average CMC
