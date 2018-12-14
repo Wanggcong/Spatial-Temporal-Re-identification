@@ -39,8 +39,8 @@ python3 test_st_market.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_market_e --te
 python3 evaluate_st.py --name ft_ResNet50_pcb_market_e 
 
 6. re-rank<br>
-1) python3 gen_rerank_all_scores_mat.py --name ft_ResNet50_pcb_market_e <br>
-2) python3 evaluate_rerank_market.py --name ft_ResNet50_pcb_market_e
+6.1) python3 gen_rerank_all_scores_mat.py --name ft_ResNet50_pcb_market_e <br>
+6.2) python3 evaluate_rerank_market.py --name ft_ResNet50_pcb_market_e
 
 
 ### DukeMTMC-reID
@@ -60,8 +60,8 @@ python3 gen_st_model_duke.py --name ft_ResNet50_pcb_duke_e  --data_dir "/home/hu
 python3 evaluate_st.py --name ft_ResNet50_pcb_duke_e 
 
 6. re-rank<br>
-1) python3 gen_rerank_all_scores_mat.py --name ft_ResNet50_pcb_duke_e <br>
-2) python3 evaluate_rerank_duke.py --name ft_ResNet50_pcb_duke_e
+6.1) python3 gen_rerank_all_scores_mat.py --name ft_ResNet50_pcb_duke_e <br>
+6.2) python3 evaluate_rerank_duke.py --name ft_ResNet50_pcb_duke_e
 
 ## Citation
 
