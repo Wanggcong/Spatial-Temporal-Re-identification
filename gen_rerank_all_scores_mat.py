@@ -218,32 +218,10 @@ print('all_scores shape:',all_scores.shape)
 CMC = torch.IntTensor(len(all_labels)).zero_()
 ap = 0.0
 for i in range(len(all_labels)):
-# for i in range(2):
-    # ap_tmp, CMC_tmp = evaluate(query_feature[i],query_label[i],query_cam[i],query_frames[i], gallery_feature,gallery_label,gallery_cam,gallery_frames,distribution)
-    # ap_tmp, CMC_tmp, scores_new = evaluate2(all_features[i],all_labels[i],all_cams[i],all_frames[i], all_features,all_labels,all_cams,all_frames,distribution)
     scores_new = evaluate2(all_features[i],all_labels[i],all_cams[i],all_frames[i], all_features,all_labels,all_cams,all_frames,distribution)
     print('scores_new shape:',scores_new.shape)
     all_scores[i,:] = scores_new
-    # if CMC_tmp[0]==-1:
-    #     continue
-    # CMC = CMC + CMC_tmp
-    # ap += ap_tmp
     print(i)
-
-# CMC = CMC.float()
-# CMC = CMC/len(query_label) #average CMC
-# print('top1:%f top5:%f top10:%f mAP:%f'%(CMC[0],CMC[4],CMC[9],ap/len(query_label)))
-# print('alpha,smooth:',alpha,smooth)
-
-# result = {'CMC':CMC.numpy()}
-
-###############################################################################################
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_two_stream.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_vis_stream.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_st_stream.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_rand.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_two_stream_cnpr.mat',result)
-# scipy.io.savemat('model/'+name+'/'+'CMC_duke_two_stream_add'+str(alpha)+'.mat',result)
 
 print('type(all_scores):',type(all_scores))
 all_scores = {'all_scores':all_scores}
