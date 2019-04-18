@@ -26,16 +26,16 @@ Code for st-ReID(pytorch). We achieve **Rank@1=98.1%, mAP=87.6%** without re-ran
    1) change the path of dataset <br>
    2) python3 prepare --Market
 
-2. train<br>
+2. train (appearance feature learning) <br>
 python3 train_market.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_market_e --erasing_p 0.5 --train_all --data_dir "/home/huangpg/st-reid/dataset/market_rename/"
 
-3. test<br>
+3. test (appearance feature extraction) <br>
 python3 test_st_market.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_market_e --test_dir "/home/huangpg/st-reid/dataset/market_rename/" 
 
-4. generate st model<br>
+4. generate st model (spatial-temporal distribution) <br>
 python3 test_st_market.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_market_e --test_dir "/home/huangpg/st-reid/dataset/market_rename/" 
 
-5. evaluate<br>
+5. evaluate (joint metric, you can use your own visual feature or spatial-temporal streams) <br>
 python3 evaluate_st.py --name ft_ResNet50_pcb_market_e 
 
 6. re-rank<br>
@@ -47,16 +47,16 @@ python3 evaluate_st.py --name ft_ResNet50_pcb_market_e
 1. data prepare<br>
 python3 prepare --Duke
 
-2. train<br>
+2. train (appearance feature learning) <br>
 python3 train_duke.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_duke_e --erasing_p 0.5 --train_all --data_dir "/home/huangpg/st-reid/dataset/DukeMTMC_prepare/"
 
-3. test<br>
+3. test (appearance feature extraction) <br>
 python3 test_st_duke.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_duke_e --test_dir "/home/huangpg/st-reid/dataset/DukeMTMC_prepare/" 
 
-4. generate st model<br>
+4. generate st model (spatial-temporal distribution) <br>
 python3 gen_st_model_duke.py --name ft_ResNet50_pcb_duke_e  --data_dir "/home/huangpg/st-reid/dataset/DukeMTMC_prepare/"
 
-5. evaluate<br>
+5. evaluate (joint metric, you can use your own visual feature or spatial-temporal streams) <br>
 python3 evaluate_st.py --name ft_ResNet50_pcb_duke_e 
 
 6. re-rank<br>
