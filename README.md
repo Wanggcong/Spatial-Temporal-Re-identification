@@ -33,8 +33,7 @@ python3 train_market.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_market_e --eras
 python3 test_st_market.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_market_e --test_dir "/home/huangpg/st-reid/dataset/market_rename/" 
 
 4. generate st model (spatial-temporal distribution) <br>
-python3 test_st_market.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_market_e --test_dir "/home/huangpg/st-reid/dataset/market_rename/" 
-
+python3 gen_st_model_market.py --name ft_ResNet50_pcb_market_e --data_dir "/home/huangpg/st-reid/dataset/market_rename/"
 5. evaluate (joint metric, you can use your own visual feature or spatial-temporal streams) <br>
 python3 evaluate_st.py --name ft_ResNet50_pcb_market_e 
 
