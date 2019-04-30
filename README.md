@@ -24,7 +24,7 @@ Code for st-ReID(pytorch). We achieve **Rank@1=98.1%, mAP=87.6%** without re-ran
 ### Market1501
 1. data prepare<br>
    1) change the path of dataset <br>
-   2) python3 prepare --Market
+   2) python3 prepare.py --Market
 
 2. train (appearance feature learning) <br>
 python3 train_market.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_market_e --erasing_p 0.5 --train_all --data_dir "/home/huangpg/st-reid/dataset/market_rename/"
