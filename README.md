@@ -3,6 +3,11 @@
 ----------
 Code for st-ReID(pytorch). We achieve **Rank@1=98.1%, mAP=87.6%** without re-ranking and **Rank@1=98.0%, mAP=95.5%** with re-ranking for market1501.For Duke-MTMC, we achieve **Rank@1=94.4%, mAP=83.9%** without re-ranking and **Rank@1=94.5%, mAP=92.7%** with re-ranking.
 
+## update:
+2019.05.31: gen_st_model_market.py added Line 68~69.
+
+
+
 ## 1. ST-ReID
 ### 1.1 model
 ![](https://i.imgur.com/WYCcBHO.jpg)
