@@ -65,6 +65,8 @@ def spatial_temporal_distribution(camera_id, labels, frames):
     for i in range(class_num):
         for j in range(8-1):
             for k in range(j+1,8):
+                if spatial_temporal_count[i][j]==0 or spatial_temporal_count[i][k]==0:
+                    continue 
                 st_ij = spatial_temporal_avg[i][j]
                 st_ik = spatial_temporal_avg[i][k]
                 if st_ij>st_ik:
