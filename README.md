@@ -3,9 +3,9 @@
 ----------
 Code for st-ReID(pytorch). We achieve **Rank@1=98.1%, mAP=87.6%** without re-ranking and **Rank@1=98.0%, mAP=95.5%** with re-ranking for market1501.For Duke-MTMC, we achieve **Rank@1=94.4%, mAP=83.9%** without re-ranking and **Rank@1=94.5%, mAP=92.7%** with re-ranking.
 
-## update and FQA:
-2019.05.31: gen_st_model_market.py, added Line 68~69.
-2019.06.02: How to add the spatial-temporal constraint into conventional re-id models? You can replace step 2 and step 3 by your own visual feature represenation.
+## Update and FQA:
+- 2019.05.31: gen_st_model_market.py, added Line 68~69.
+- 2019.06.02: How to add the spatial-temporal constraint into conventional re-id models? You can replace step 2 and step 3 by your own visual feature represenation.
 
 
 ## 1. ST-ReID
