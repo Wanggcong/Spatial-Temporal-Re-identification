@@ -4,8 +4,9 @@
 Code for st-ReID(pytorch). We achieve **Rank@1=98.1%, mAP=87.6%** without re-ranking and **Rank@1=98.0%, mAP=95.5%** with re-ranking for market1501.For Duke-MTMC, we achieve **Rank@1=94.4%, mAP=83.9%** without re-ranking and **Rank@1=94.5%, mAP=92.7%** with re-ranking.
 
 ## Update and FQA:
-- 2019.05.31: gen_st_model_market.py, added Line 68~69.
+- 2019.07.11: README.md, python3 prepare --Duke ---> python3 prepare.py --Duke
 - 2019.06.02: How to add the spatial-temporal constraint into conventional re-id models? You can replace step 2 and step 3 by your own visual feature represenation.
+- 2019.05.31: gen_st_model_market.py, added Line 68~69.
 
 
 ## 1. ST-ReID
@@ -49,7 +50,7 @@ python3 evaluate_st.py --name ft_ResNet50_pcb_market_e
 
 ### DukeMTMC-reID
 1. data prepare<br>
-python3 prepare --Duke
+python3 prepare.py --Duke
 
 2. train (appearance feature learning) <br>
 python3 train_duke.py --PCB --gpu_ids 2 --name ft_ResNet50_pcb_duke_e --erasing_p 0.5 --train_all --data_dir "/home/huangpg/st-reid/dataset/DukeMTMC_prepare/"
