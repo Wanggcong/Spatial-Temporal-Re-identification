@@ -77,7 +77,7 @@ If you use this code, please kindly cite it in your paper.
 @article{guangcong2019aaai,
   title={Spatial-Temporal Person Re-identification},
   author={Wang, Guangcong and Lai, Jianhuang and Huang, Peigen and Xie, Xiaohua},
-  booktitle={AAAI},
+  booktitle={Association for the Advancement of Artificial Intelligence (AAAI)},
   year={2019}
 }
 ```
