@@ -78,11 +78,13 @@ If you use this code, please kindly cite it in your paper.
 @article{guangcong2019aaai,
   title={Spatial-Temporal Person Re-identification},
   author={Wang, Guangcong and Lai, Jianhuang and Huang, Peigen and Xie, Xiaohua},
-  booktitle={Association for the Advancement of Artificial Intelligence (AAAI)},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  pages={8933-8940},
   year={2019}
 }
 ```
-
+Paper Link:https://wvvw.aaai.org/ojs/index.php/AAAI/article/view/4921
+or https://arxiv.org/abs/1812.03282
 ## Related Repos
 
 Our codes are mainly based on this [repository](https://github.com/layumi/Person_reID_baseline_pytorch) 
