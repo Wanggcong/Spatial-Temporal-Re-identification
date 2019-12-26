@@ -4,6 +4,7 @@
 Code for st-ReID(pytorch). We achieve **Rank@1=98.1%, mAP=87.6%** without re-ranking and **Rank@1=98.0%, mAP=95.5%** with re-ranking for market1501.For Duke-MTMC, we achieve **Rank@1=94.4%, mAP=83.9%** without re-ranking and **Rank@1=94.5%, mAP=92.7%** with re-ranking.
 
 ## Update and FQA:
+- 2019.12.26：a demo figure has been added. I am not sure if it works or not because it was written one years ago. I will update this file in the future.
 - 2019.07.28: Models(+RE) (google drive Link:https://drive.google.com/drive/folders/1FIreE0pUGiqLzppzz_f7gHw0kaXZb1kC)
 - 2019.07.11: Models (+RE) (baiduyun Link:https://pan.baidu.com/s/1QMp22dVGJvBH45e4XPdeKw  password:dn7b) are released. Note that, for market, slightly different from the results in the paper because we use pytorch 0.4.1 to train these models (mAP is slightly higher than paper while rank-1 is slightly lower than paper). We may reproduce the results by Pytorch 0.3 later.
 - 2019.07.11: README.md, python3 prepare --Duke ---> python3 prepare.py --Duke
