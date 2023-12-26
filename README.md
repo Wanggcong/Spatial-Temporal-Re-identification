@@ -4,6 +4,7 @@
 Code for st-ReID(pytorch). We achieve **Rank@1=98.1%, mAP=87.6%** without re-ranking and **Rank@1=98.0%, mAP=95.5%** with re-ranking for market1501.For Duke-MTMC, we achieve **Rank@1=94.4%, mAP=83.9%** without re-ranking and **Rank@1=94.5%, mAP=92.7%** with re-ranking.
 
 ## Update and FQA:
+- 2023.12.26: I would not maintain this code base. The PyTorch version or some code packages would be obsolete, but I don't think it is a big deal. I might give you some suggestions for implementation if possible.
 - 2020.01.08: If you do not want to re-train a model, you can follow this link. https://github.com/Wanggcong/Spatial-Temporal-Re-identification/issues/26#issuecomment-571905649
 - 2019.12.26：a demo figure has been added. I am not sure if it works or not because it was written one years ago. I will update this file in the future.
 - 2019.07.28: Models(+RE) (google drive Link:https://drive.google.com/drive/folders/1FIreE0pUGiqLzppzz_f7gHw0kaXZb1kC)
